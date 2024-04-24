@@ -1,0 +1,125 @@
+mads 2.1.5 build 3 (21 Feb 22)
+Source: C:\jac\system\Atari800\Programming\Repositories\Mad-Assembler\examples\mads_change_history.asm
+     1 				; MADS Change History Reference
+     2 				;
+     3 				; This file provides code samples to verify the additions, fixes and changes in the different MADS versions.
+     4 				;
+     5
+     6 				    org $2000
+     7 				    opt h-
+     8
+     9 				    .macro m_version
+    10 				    .byte 10,13,':1',10,13
+    11 				    .endm
+    12
+    13 				    ;==================================================================
+    14 2000			    m_version "https://www.wudsn.com/tmp/projects/mads/en/#2.0.5"
+Macro: M_VERSION [Source: C:\jac\system\Atari800\Programming\Repositories\Mad-Assembler\examples\mads_change_history.asm]
+     1 2000 0A 0D 68 74 74 70 +     .byte 10,13,'https://www.wudsn.com/tmp/projects/mads/en/#2.0.5',10,13
+Source: C:\jac\system\Atari800\Programming\Repositories\Mad-Assembler\examples\mads_change_history.asm
+    15
+    16 2035			    .proc v2.0.5
+    17 				    
+    18 2035			    .proc unused
+    19 				    
+    20 2035			    .array tab .byte
+    21  [0000] 01 02 03		    1,2,3
+    22 				    .enda
+    23 				    
+    24 				    .endp
+    25
+    26 				    .struct stru
+    27
+    28 2038			    .array tab[3]
+    29 				    .enda
+    30
+    31 				    .ends
+    32 				        
+    33 				    .endp
+    34
+    35
+    36 				    ;==================================================================
+    37 2038			    m_version "https://www.wudsn.com/tmp/projects/mads/en/#2.0.4"
+Macro: M_VERSION [Source: C:\jac\system\Atari800\Programming\Repositories\Mad-Assembler\examples\mads_change_history.asm]
+     1 2038 0A 0D 68 74 74 70 +     .byte 10,13,'https://www.wudsn.com/tmp/projects/mads/en/#2.0.4',10,13
+Source: C:\jac\system\Atari800\Programming\Repositories\Mad-Assembler\examples\mads_change_history.asm
+    38
+    39 206D			    .proc v2.0.4
+    40 				;    .db $00    ;removed
+    41 				;    .dw $00    ;removed
+    42
+    43 206D 12 34		    .dbyte $1234
+    44  [0000] 01		    .put[0]=1
+    45  [0000] 02		    .put[0]=2
+    46  [0000] 03		    .put[0]=3
+    47  [0000] 04		    .put[0]=4
+    48 206F 04			    .byte .get[0]    ;1 byte
+    49 2070 04 00		    .word .wget[0]   ;2 bytes
+    50 2072 04 00 00		    .long .lget[0]   ;3 bytes
+    51 2075 04 00 00		    .long .dget[0]   ;4 bytes
+    52
+    53 = 0080			tmp = $80
+    54 = 0082			posx = $82
+    55 = 0084			ptr2 = $84
+    56 = 0086			ptr4 = $86
+    57
+    58 2078 18 B1 80 69 01 85 +     adw (tmp),y #1 posx
+    59 2086 18 B1 80 65 84 85 +     adw (tmp),y ptr2 ptr4
+    60 				    
+    61 				    .endp
+    62
+    63 				    ;==================================================================
+    64 2094			    m_version "https://www.wudsn.com/tmp/projects/mads/en/#2.0.2"
+Macro: M_VERSION [Source: C:\jac\system\Atari800\Programming\Repositories\Mad-Assembler\examples\mads_change_history.asm]
+     1 2094 0A 0D 68 74 74 70 +     .byte 10,13,'https://www.wudsn.com/tmp/projects/mads/en/#2.0.2',10,13
+Source: C:\jac\system\Atari800\Programming\Repositories\Mad-Assembler\examples\mads_change_history.asm
+    65
+    66 20C9			    .proc v2.0.2
+    67
+    68 20C9 34 65 73 74		    .sb "Test"
+    69 20CD B4 E5 F3 F4		    .sb +$80,"Test"
+    70 20D1 41 34 65 73 74 21	    .sb 1,"Test",'A'
+    71
+    72 				    .endp
+    73
+    74
+    75 				    ;==================================================================
+    76 20D7			    m_version "https://www.wudsn.com/tmp/projects/mads/en/#2.0.1"
+Macro: M_VERSION [Source: C:\jac\system\Atari800\Programming\Repositories\Mad-Assembler\examples\mads_change_history.asm]
+     1 20D7 0A 0D 68 74 74 70 +     .byte 10,13,'https://www.wudsn.com/tmp/projects/mads/en/#2.0.1',10,13
+Source: C:\jac\system\Atari800\Programming\Repositories\Mad-Assembler\examples\mads_change_history.asm
+    77
+    78 210C			    .proc v2.0.1
+    79
+    80 210C			    .array word_array .word
+    81  [0000] 01 02 03		    1,2,3
+    82 				    .enda
+    83
+    84 2112			    .array long_array .long
+    85  [0000] 01 02 03		    1,2,3
+    86 				    .enda
+    87
+    88 211B			    .array dword_array .dword
+    89  [0000] 01 02 03		    1,2,3
+    90 				    .enda
+    91
+    92 				    .endp
+    93
+    94 				    ;===================================================================
+    95
+    96 2127			    .proc v1.9.5  ;https://www.wudsn.com/tmp/projects/mads/en/#1.9.5
+    97 				; TODO: Incomplete
+    98
+    99 2127			line0
+   100 2127			line1
+   101 2127			line2
+   102 2127			line3
+   103
+   104 2127 27 27 27 27		ladr1 :4 dta l(line:1)
+   105 212B 21 21 21 21		hadr1 :4 dta h(line:1)
+   106
+   107 212F 27 27 27 27		ladr2 :4 dta l(line%%1)
+   108 2133 21 21 21 21		hadr2 :4 dta h(line%%1)
+   109 				    .endp
+   110
+   111 				    
